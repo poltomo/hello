@@ -1,6 +1,6 @@
 ---
 layout: page
-title: varun
+# title: varun
 # permalink: /hello/about/
 ---
 
@@ -10,25 +10,31 @@ Most of my experience is split between courses, internships, personal projects, 
 
 
 
-# Courses
+## Courses
 
 These are just the IMPORTANT courses I have taken:
 
-ICS 33		Intermediate Programming with Python
-ICS 45C		Programming in C++
-ICS 6D		Discrete Math
-ICS 51		Computer Organization
-MATH 3A		Linear Algebra
+1. ICS 33		Intermediate Programming with Python
 
-ICS 46		Data Structures and Algorithms
-CS 178		Machine Learning
+2. ICS 45C		Programming in C++
+
+3. ICS 6D		Discrete Math
+
+4. ICS 51		Computer Organization
+
+5. MATH 3A		Linear Algebra
+
+6. ICS 46		Data Structures and Algorithms
+
+7. CS 178		Machine Learning
 
 
 
 # Internships
 
-Intel		Software Engineer Intern
-Fedex Ground	Software Engineer Coop
+1. Intel		Software Engineer Intern
+
+2. Fedex Ground		Software Engineer Coop
 
 
 
@@ -37,26 +43,24 @@ Fedex Ground	Software Engineer Coop
 1. Private Cloud Resource Pool using Linux and Openstack
 2. Java Spring Boot REST API
 
+3. Currently in the works. Stay posted
+
 
 
 # Competetive Programming
 
 I've been doing competive programming on hackerrank, leetcode, cses, and atcoder.
 
-My codesignal report is quite good now. See for yourself: [report][https://app.codesignal.com/evaluation-result/YX2cpBpgifYv9LjE6]
+My codesignal report is quite good now. See for yourself:
+[report](a)
 
 # Other
 
 I've worked as an undergraduate researcher for a research proposal at UCI. It was quite fun.
 
-Also, this April, I attended LA Hacks. Lots of big companies showed up. There was this company that makes drones for warzones. There was also this LLM company, Cohere. that came.
+Also, this April, I attended LA Hacks. There was this company that makes drones for warzones, which is pretty neat.
 
-I started a blog which you can find on this site as well as a [youtube channel][https://www.youtube.com/channel/UCYyaD89QqfCwwZ-RYG0W8aQ].
+I started a blog which you can find on this site as well as a [youtube channel](b).
 
-
-I read some books towards the end of last year and this year:
-
-Land of the Silent People	about a news reporter who covers WW2 during Eastern Europe
-For Whom The Bell Tolls		Man blows up bridge
-Catcher in The Rye		fun fact: the guy who shot John Lennon loved this book. What a fool.
-Cannery Row			this book is alright
+[a]: https://app.codesignal.com/evaluation-result/YX2cpBpgifYv9LjE6?accessToken=8xYonWqgz42msHsYF-irrjtBPsq5q8p74RJoqYacA9
+[b]: https://www.youtube.com/channel/UCYyaD89QqfCwwZ-RYG0W8aQ
