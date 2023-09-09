@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "how to check if a point is in a triangle"
-date:   2023-09-08 15:06:34 -0700
+title:  "point location test and cross products"
+date:   2023-09-09 15:06:34 -0700
 # categories:
 # permalink:
 ---
 
-Problem: [cses point location test][https://cses.fi/problemset/task/2189/]
+Problem: [cses point location test](https://cses.fi/problemset/task/2189/)
 
 C++ solution:
 
@@ -61,3 +61,8 @@ The cross product of vector a and vector b in R^2 is (a.x * b.y) - (b.x * a.y) o
 The cross product is not commutative. If the cross product is 0, then the vectors are colinear. If the cross product is less than 0, then the first vector (in the previous case, a) is to the left of vector b.
 
 The solution is just a matter of using this fact on the vectors: (b - a) and (r - a).
+
+Resources:
+[wikipedia](https://en.wikipedia.org/wiki/Cross_product#Computational_geometry)
+[stack overflow](https://stackoverflow.com/questions/22156646/homework-cross-product-of-3-points-in-2d-space)
+[my drawing](drawing1.jpeg)
