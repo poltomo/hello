@@ -1,7 +1,7 @@
 ---
 layout: page
 title: about
-permalink: /about/
+# permalink: /hello/about/
 ---
 
 I'm sharing some projects and ideas here as well as anything I find fun.

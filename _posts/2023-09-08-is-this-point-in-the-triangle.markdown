@@ -2,7 +2,8 @@
 layout: post
 title:  "how to check if a point is in a triangle"
 date:   2023-09-08 15:06:34 -0700
-categories: jekyll update
+# categories:
+# permalink:
 ---
 
 Problem: given a point r and a triangle defined by points ABC, tell if the point is inside or outside the triangle.

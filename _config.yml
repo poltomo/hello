@@ -20,10 +20,10 @@
 
 title: Poltomo
 email: nawatheyvarun@gmail.com
-description: math calculus linear algebra statistics computers machine learning books words poltomo
+description: a collection of fun topics
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: /hello # the subpath of your site, e.g. /blog
+url: https://poltomo.github.io # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: north_pyke
 github_username:  poltomo
 
