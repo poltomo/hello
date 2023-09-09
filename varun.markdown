@@ -30,7 +30,7 @@ These are just the IMPORTANT courses I have taken:
 
 
 
-# Internships
+## Internships
 
 1. Intel		Software Engineer Intern
 
@@ -38,7 +38,7 @@ These are just the IMPORTANT courses I have taken:
 
 
 
-# Personal Projects
+## Personal Projects
 
 1. Private Cloud Resource Pool using Linux and Openstack
 2. Java Spring Boot REST API
@@ -47,20 +47,20 @@ These are just the IMPORTANT courses I have taken:
 
 
 
-# Competetive Programming
+## Competetive Programming
 
 I've been doing competive programming on hackerrank, leetcode, cses, and atcoder.
 
 My codesignal report is quite good now. See for yourself:
 [report](a)
 
-# Other
+## Other
 
 I've worked as an undergraduate researcher for a research proposal at UCI. It was quite fun.
 
 Also, this April, I attended LA Hacks. There was this company that makes drones for warzones, which is pretty neat.
 
-I started a blog which you can find on this site as well as a [youtube channel](b).
+I started a blog which you can find on this site as well as a [youtube channel][b].
 
 [a]: https://app.codesignal.com/evaluation-result/YX2cpBpgifYv9LjE6?accessToken=8xYonWqgz42msHsYF-irrjtBPsq5q8p74RJoqYacA9
 [b]: https://www.youtube.com/channel/UCYyaD89QqfCwwZ-RYG0W8aQ
