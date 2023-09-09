@@ -53,7 +53,6 @@ int main() {
 
 	}
 }
-}
 {% endhighlight %}
 
 The cross product of vector a and vector b in R^2 is (a.x * b.y) - (b.x * a.y) or the determinant of matrix A = [ a b ].
@@ -63,6 +62,6 @@ The cross product is not commutative. If the cross product is 0, then the vector
 The solution is just a matter of using this fact on the vectors: (b - a) and (r - a).
 
 Resources:
-[wikipedia](https://en.wikipedia.org/wiki/Cross_product#Computational_geometry)
-[stack overflow](https://stackoverflow.com/questions/22156646/homework-cross-product-of-3-points-in-2d-space)
-[my drawing](drawing1.jpeg)
+[wikipedia](https://en.wikipedia.org/wiki/Cross_product#Computational_geometry),
+[stack overflow](https://stackoverflow.com/questions/22156646/homework-cross-product-of-3-points-in-2d-space),
+[my drawing](2023-09-09-drawing1.jpeg)
