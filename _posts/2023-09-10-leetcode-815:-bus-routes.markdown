@@ -2,7 +2,7 @@
 layout: post
 title:  "leetcode 815. bus routes"
 date:   2023-09-10 15:06:34 -0700
-___
+---
 
 problem: [bus routes](https://leetcode.com/problems/bus-routes/description/)
 
