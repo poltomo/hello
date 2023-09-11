@@ -20,7 +20,7 @@
 
 title: Poltomo
 email: nawatheyvarun@gmail.com
-description: a collection of fun topics
+description: by Varun Nawathey
 
 baseurl: /hello # the subpath of your site, e.g. /blog
 url: https://poltomo.github.io # the base hostname & protocol for your site, e.g. http://example.com
