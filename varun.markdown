@@ -43,7 +43,7 @@ These are just the IMPORTANT courses I have taken:
 1. Private Cloud Resource Pool using Linux and Openstack
 2. Java Spring Boot REST API
 
-3. Currently in the works. Stay posted
+3. My next project is currently in the works. Stay posted!
 
 
 
