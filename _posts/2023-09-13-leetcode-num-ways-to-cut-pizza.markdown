@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "leetcode 144. number of ways of cutting a pizza"
+title:  "leetcode 1444. number of ways of cutting a pizza"
 date:   2023-09-13 15:06:34 -0700
 # categories:
 # permalink:
