@@ -23,7 +23,7 @@ The problem is fit for dynammic programming.
 
 Say you make a vertical cut; the number of ways to cut the pizza k times given you made a vertical cut, is simply the the number of ways to cut the remaining pizza k-1 times.
 
-Also, notice that you can represent the remaining pizza left by the top left position.
+Also, notice that you can represent the remaining pizza by the top left position.
 
 This leads me to the dp states: **dp[c][row][col]**, where c is the remaining cuts to make, row is the topmost row, and col is the leftmost column.
 
@@ -61,7 +61,14 @@ The base case (c = 0 cuts to make) is quite simple:
 if pfx[row][col] > 0, then dp[0][row][col] = 1. Otherwise, dp[0][row][col] = 0.
 
 
+And, the recurrence is:
 
+dp[c][row][col] = ((pfx[row][col] - pfx[row + 1][col] > 0) ? dp[c - 1][row + 1][col] : 0) + ... + ((pfx[N - 1][col] - pfx[N - 1][col] > 0) ? dp[c - 1][N - 1][col] : 0) +
+
+((pfx[row][col] - pfx[row][col + 1] > 0) ? dp[c - 1][row][col + 1] : 0) + ... + ((pfx[row][M - 1] - pfx[N - 1][M - 1] > 0) ? dp[c - 1][row][M - 1] : 0)
+
+
+Sure, I could write this way clearer in summation notation.
 
 
 bottom up dynammic programming
@@ -157,7 +164,6 @@ public:
 
 top down dynammic programming
 {% highlight c++ %}
-#define REP(i, n) for(int i = 0;i < n;++i)
 const int MOD = 1e9 + 7;
 
 class Solution {
