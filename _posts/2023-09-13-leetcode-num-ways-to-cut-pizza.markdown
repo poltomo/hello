@@ -8,7 +8,7 @@ date:   2023-09-13 15:06:34 -0700
 
 Problem: [number of ways to cut pizza](https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/description/)
 
-Leetcode Solution page: [solution](https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/solutions/4045890/thoroughly-explained-solution/)
+Leetcode Solution page: [my solution](https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/solutions/4045890/thoroughly-explained-solution/)
 
 # Problem
 The problem asks to find the number of ways to cut the pizza k times such that each piece has at least one apple.
