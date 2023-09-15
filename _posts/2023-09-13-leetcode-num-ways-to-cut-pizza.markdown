@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "leetcode 144. number of ways of cutting a pizza"
-date:   2023-09-14 15:06:34 -0700
+date:   2023-09-13 15:06:34 -0700
 # categories:
 # permalink:
 ---
@@ -110,7 +110,7 @@ public:
 {% endhighlight %}
 
 bottom up dynammic programming (optimized memory)
-{$ highlight c++ %}
+{% highlight c++ %}
 #define REP(i, n) for(int i = 0;i < n;++i)
 class Solution {
 public:
