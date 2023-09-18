@@ -4,8 +4,8 @@ title: about
 # permalink: /hello/about/
 ---
 
-I'm sharing some projects and ideas here as well as anything I find fun.
+I've been doing competitive programming for quite a while now, so I'll be writing editorials here about problems I find cool.
 
-You'll find all sorts of cool things here: stuff related to math, computers, programming, books, drawing, monkeys, maps, chemistry, calendars. That's not at all exhaustive, but I hope it gives you an idea of what this site is about.
+In time though, you'll find all sorts of neat things here: stuff related to math, computers, programming, books, drawing, monkeys, maps, chemistry, calendars. That's not at all exhaustive, but I hope it gives you an idea of what this site is about.
 
 Also, poltomo is just a made up word I came up with.
