@@ -47,6 +47,8 @@ the answer is 4 operations
 
 ---
 
+Solution:
+
 Have you ever heard that a permutation represents a bijection from a set onto itself? No? Well its true.
 
 You don't need to know that to solve the problem, but it might clue you into the fact that you are being given the edges of a graph. Indices are being mapped to other indices. Think of it as a directed graph where each vertex has an in-degree of 1 and an out-degree of 1.
@@ -74,6 +76,10 @@ Steps:
 2. initialize set to keep track of seen vertices as there's no need to follow cycles that we've already seen. This also ensures that the prime factorization is only computed once per cycle.
 3. Go through each vertex, finding the length of the cycle it is a part of. And, add the seen vertices to the set.
 4. Afterwards compute the product of the primes. This is the LCM.
+
+Notes:
+could have used unordered_map to store primes and their exponents.
+could have used sieve of eratosthenes for n = 10^5, to simplify prime factorization
 
 {% highlight c++ %}
 #include<iostream>
@@ -169,3 +175,6 @@ int main() {
 }
 
 {% endhighlight %}
+
+[cp-algorithms](https://cp-algorithms.com/algebra/factorization.html#wheel-factorization)
+
