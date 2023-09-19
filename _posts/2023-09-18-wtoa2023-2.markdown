@@ -1,0 +1,171 @@
+---
+layout: post
+title:  "cool problem september 18, 2023"
+date:   2023-09-18 15:06:34 -0700
+---
+
+problem:
+
+A permuation of N numbers is a sequence where each number from 1 to N appears one time.
+
+Given a permutation P and any arbitrary array A, operation f is defined as:
+1. for each index i(1 ≤ i ≤ N), new_A[i] = A[P[i]]
+2. A = newA
+
+Now, if I give you a permutation of N numbers, can you tell me the minimum number of operations I have to make until I get back the original array? The answer might be big, so give the answer mod (10^9 + 7).
+
+Example 1:
+
+P = (3, 4, 1, 2)
+
+index 1 maps to index 3
+index 2 maps to index 4
+index 3 maps to index 1
+index 4 maps to index 2
+
+I choose an arbitrary array of size N:
+A = (5, 6, 7, 8)
+
+after operation 1, A becomes (7, 8, 5, 6)
+after operation 2, A becomes (5, 6, 7, 8)
+
+the answer is 2 operations.
+
+Example 2:
+
+P = (4, 3, 1, 2)
+
+A = (5, 6, 7, 8)
+
+after operation 1: (8, 7, 5, 6)
+after operation 2: (6, 5, 8, 7)
+after operation 3: (7, 8, 6, 5)
+after operation 4: (5, 6, 7, 8)
+
+the answer is 4 operations
+
+
+---
+
+Have you ever heard that a permutation represents a bijection from a set onto itself? No? Well its true.
+
+You don't need to know that to solve the problem, but it might clue you into the fact that you are being given the edges of a graph. Indices are being mapped to other indices. Think of it as a directed graph where each vertex has an in-degree of 1 and an out-degree of 1.
+
+Its should be obvious that the graph will have cycles: after enough operations that array always returns to its original state. You can also notice this by drawing the graph, which is what I did.
+
+[drawing](https://www.dropbox.com/scl/fi/iof0hzajrf7bu1zpvuudp/IMG_3405.jpg?rlkey=y8k3wxmcxxzjngg2umy4bicwx&dl=0)
+
+Say you have a cycle of length 3 and a cycle of length 2 in your permutation of n=5. In 3 operations, the 3-cycle elements will be in their original state, but the 2-cycle elements won't.
+
+When will they be at their original state at the same time?
+
+The answer is lcm(2, 3) = 6.
+
+Also, notice that the cycle lengths will all sum up to N.
+
+This problem becomes complicated because of how fast the lcm will grow however. You can't compute successive lcms because lcm(a, b, c) % d is not equal to lcm(a, lcm(b, c) % d) % d. That's why you have to factor the cycle lengths into primes and store the max prime exponent seen. 
+
+lcm(6, 18) = 1^0 + 2^1 + 3^2
+
+
+Steps:
+
+1. create index-to-index mapping array E such that if index i maps to index j, then E[i] = j
+2. initialize set to keep track of seen vertices as there's no need to follow cycles that we've already seen. This also ensures that the prime factorization is only computed once per cycle.
+3. Go through each vertex, finding the length of the cycle it is a part of. And, add the seen vertices to the set.
+4. Afterwards compute the product of the primes. This is the LCM.
+
+{% highlight c++ %}
+#include<iostream>
+#include<algorithm>
+#include<unordered_set>
+
+
+using namespace std;
+
+#define ll long long
+
+const ll MOD = 1e9 + 7;
+
+ll modPow(ll a, ll b, ll m) {
+	a %= m;
+	ll res = 1;
+	while (b > 0) {
+		if (b & 1)
+			res = res * a % m;
+		a = a * a % m;
+		b >>= 1;
+	}
+	return res;
+}
+
+void maxPrimeFactors(ll n, vector<int>& exp) {
+	int c = 0;
+	while (n % 2 == 0) {
+		n /= 2;
+		++c;
+	}
+	exp[2] = max(exp[2], c);
+
+	for (ll d = 3;d * d <= n; d += 2) {
+		c = 0;
+		while (n % d == 0) {
+			n /= d;
+			++c;
+		}
+		exp[d] = max(exp[d], c);
+	}
+	if (n > 1) {
+		exp[n] = max(exp[n], 1);
+	}
+}
+
+
+int main() {
+	int N; // 1 <= N <= 10^5
+	cin >> N;
+
+	vector<int> p(N);
+	for (int i = 0;i < N;++i) cin >> p[i];
+
+	vector<int> E(N + 1);
+	for (int i = 1;i < N + 1;++i) {
+		E[ p[i - 1] ] = i;
+	}
+
+	vector<int> exp(N + 1);
+
+	unordered_set<int> seen;
+
+	for (int i = 1;i < N + 1;++i) {
+		if (seen.find(i) != seen.end()) continue;
+
+		seen.insert(i);
+
+		int c = E[i];
+
+		int n_cycle = 1;
+
+		while (c != i) {
+			seen.insert(c);
+			c = E[c];
+			++n_cycle;
+		}
+
+		maxPrimeFactors(n_cycle, exp);
+	}
+
+	int LCM = 1;
+
+	for (int i : exp) cout << i << ' ';
+	cout << endl;
+
+	for (int i = 2;i < N + 1;++i) {
+		LCM = (LCM * modPow(i, exp[i], MOD)) % MOD;
+	}
+
+
+	cout << LCM << endl;
+}
+
+{% endhighlight %}
