@@ -12,10 +12,8 @@ NOT FINISHED
 ---
 
 [related problem 1](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/), 
-[related problem 2](https://cses.fi/problemset/task/1192)
 
-
-related problem 1 solution:
+solution:
 {% highlight c++ %}
 class Solution {
 public:
@@ -56,7 +54,9 @@ public:
 };
 {% endhighlight %}
 
-related problem 2 solution:
+[problem 2](https://cses.fi/problemset/task/1192)
+
+solution:
 {% highlight c++ %}
 #include<iostream>
 #include<vector>
