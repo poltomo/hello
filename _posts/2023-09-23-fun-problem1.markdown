@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "problem - september 24, 2023"
+title:  "fun problem #1"
 date:   2023-09-24 15:06:34 -0700
 ---
 
