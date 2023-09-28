@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "cool problem - september 18, 2023"
+title:  "problem - september 24, 2023"
 date:   2023-09-24 15:06:34 -0700
 ---
 
@@ -23,9 +23,9 @@ the answer is 2.
 
 ---
 
-Solution:
+Let me know if you think I am wrong by email. I appreciate any possible learning.
 
-First, please let me know if you think I am wrong by email. I appreciate any possible learning.
+Solution:
 
 Notice that the minimum size you can ever reach after any number of operations is the half the initial size N.
 
