@@ -6,6 +6,18 @@ date:   2023-10-07 15:06:34 -0700
 # permalink:
 ---
 
+This is my first post of October 2023.
+
+Lately, I've been coming across lots of things that are worth writing about, especially since I'm in school now. It seems every lecture there is some new thing that I would like to look into more. Sure, there's always going to be interesting things to learn about, but I can't possibly write about all of that.
+
+I think this has to do with me not being totally sure on the direction of poltomo. The goal is not to be comprehensive; like I said earlier, its just not possible. Its not about summarizing either. That's just lame. And, let's not forget that I am getting way ahead of myself. I've written maybe like 7 posts, and most are about competitive programming problems. So much for variety.
+
+One idea I had is too bring in more people. And if they are smarter than me, then my own pace of learning would increase.
+
+I read this article a while ago that said writing about things that have already been heavily discussed is redundant and pointless in the age of generative AI. I guess that makes sense, but what if people missed some key insight the first time around. This is a big question for me because a big worry of mine is that this is a waste of time.
+
+Anyways, here's an editorial on a very old puzzle with tons of existing editorials. Enjoy!
+
 [wikipedia](https://en.wikipedia.org/wiki/Eight_queens_puzzle)
 
 [cses problem](https://cses.fi/problemset/task/1624/)
