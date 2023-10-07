@@ -31,23 +31,6 @@ Since no queens can share a row, there will be one queen per row and one queen p
 The intuition behind backtracking here is that when you place a queen, say in the first column of the first row, you threaten squares in following rows. So, in a trial and error fashion, you can successively place queens row by row until there is no unthreatened square to place the next queen. By that point if you have placed all your queens (the last queen you placed was on the last row), then you found a solution. If you still have queens yet to be placed, then you undo queen places, or backtrack, to a point where you can try a new arrangement.
 
 
-Q\.\.\.
-##\.\.
-#\.#\.
-#\.\.#
-
-Q\.\.\.
-##\.Q
-#\.##
-##\.#
-
-Q\.\.\.
-##\.Q
-#Q##
-####
-
-In this case, you reached a point where you have to backtrack.
-
 
 solution 1:
 {% highlight c++ %}
