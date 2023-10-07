@@ -18,6 +18,8 @@ I read this article a while ago that said writing about things that have already
 
 Anyways, here's an editorial on a very old puzzle with tons of existing editorials. Enjoy!
 
+---
+
 [wikipedia](https://en.wikipedia.org/wiki/Eight_queens_puzzle)
 
 [cses problem](https://cses.fi/problemset/task/1624/)
