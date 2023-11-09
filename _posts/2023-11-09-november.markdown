@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "Its November!"
+date:   2023-11-09 15:06:34 -0700
+# categories:
+# permalink:
+---
+
+Here's some cool things I've learned.
+
+# Horner's Rule
+
+Horner's Rule is a good way to compute a polynomial expression
+
+F = a0 * x^0 + a1 * x^1 + a2 * x^2 + ... + an * x^n
+F is an nth degree polynomial
+
+F = ( ( (an * x) + an-1) * x) + an-2) * x ...
+
+{% highlight python %}
+def Horner(A, x : int) -> int:
+    ans = 0
+    for a in A[::-1]:
+        ans = (ans + a) * x
+
+    return ans{% endhighlight %}
+{% endhighlight %}
+
+
+# CSES - Elevator Rides
+
+WILL FINISH LATER
