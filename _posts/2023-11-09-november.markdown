@@ -17,7 +17,7 @@ F is an nth degree polynomial
 
 F = ( ( (an * x) + an-1) * x) + an-2) * x ...
 
-{% highlight python %}
+{% highlight c++ %}
 def Horner(A, x : int) -> int:
     ans = 0
     for a in A[::-1]:
