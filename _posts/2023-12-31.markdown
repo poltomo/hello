@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Huffman Coding"
+date:   2023-12-31 07:30:00 -0700
+# categories:
+# permalink:
+---
+
+Today is the last day of 2023. It is about 8 o'clock in the morning and I forgot to sleep. That is why my new year's resolution is to sleep before midnight everyday. Anyways, I will sleep now, and finish this post before the end of the year.
+
+# Rabin Karp string matching
+
+# suffix arrays and longest repeating subsequence problem
+
+# making rubbish text with word-level Markov chains
+
+# Huffman coding
