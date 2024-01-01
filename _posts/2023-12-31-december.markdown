@@ -14,4 +14,11 @@ Today is the last day of 2023. It is about 8 o'clock in the morning and I forgot
 
 # making rubbish text with word-level Markov chains
 
+
+Quick aside, this simplifies the -I and -L flags for compiling programs that include glib. I installed glib with homebrew, and gcc wouldn't recognize the glib.h header for some reason, so I had to do this.
+
+```
+gcc-13 <program-that-includes-glib> $(pkg-config --cflags --libs glib-2.0)
+```
+
 # Huffman coding
