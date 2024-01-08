@@ -6,13 +6,105 @@ date:   2023-12-31 07:30:00 -0700
 # permalink:
 ---
 
-Today is the last day of 2023. It is about 8 o'clock in the morning and I forgot to sleep. That is why my new year's resolution is to sleep before midnight everyday. Anyways, I will sleep now, and finish this post before the end of the year.
+Today is the last day of 2023. It is about 8 o'clock in the morning and I forgot to sleep. That is why my new year's resolution is to sleep before midnight everyday.
 
 # Rabin Karp string matching
 
 # suffix arrays and longest repeating subsequence problem
 
 # making rubbish text with word-level Markov chains
+
+Here's a way to make order-1 Markov chains out of a text.
+
+clean_book.cpp
+```c++
+#include<iostream>
+#include<fstream>
+
+#include<unordered_map>
+#include<string>
+
+using namespace std;
+
+int main(int argc, char* argv[]) {
+	ifstream inputFile(argv[1]);
+	ofstream outFile(argv[2]);
+
+	string t;
+	string t_clean;
+
+	while (inputFile >> t) {
+		t_clean = string();
+		for (char c : t) {
+			if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || c == '\'' || c == '-')
+				t_clean += c;
+		}
+		outFile << t_clean << ' ';
+
+		if (t.back() == '.' || t.back() == '?' || t.back() == '!' || t.back() == ';' || t.back() == ':')
+			outFile << t.back() << ' ';
+	}
+	outFile << '\n';
+}
+```
+
+This cleans the text for later use. 
+```
+g++ clean_book.cpp -o clean_book
+./clean_book dracula.txt dracula_clean.txt
+```
+
+```c++
+#include<iostream>
+#include<fstream>
+#include<unordered_map>
+#include<string>
+
+using namespace std;
+
+int main() {
+	unordered_map<string, pair<unsigned, unordered_map<string, unsigned> > > M;
+
+	string t;
+	string prior;
+	while (cin >> t) {
+		if (t.back() == '.' || t.back() == '?' || t.back() == '!' || t.back() == ';' || t.back() == ':') {
+			prior = string();
+			continue;
+		}
+
+		++M[t].first;
+		++M[prior].second[t];
+
+		prior = t;
+	}
+
+	string s("The");
+	int n = 200;
+
+	for (int i = 0;i < n;++i) {
+		cout << s << ' ';
+
+		unordered_map<string, unsigned>:: iterator next;
+		unsigned cnt = 0;
+
+		for (unordered_map<string, unsigned>::iterator it = M[s].second.begin();it != M[s].second.end();++it) {
+			if (it->second > cnt) {
+				next = it;
+				cnt = it->second;
+			}
+		}
+		M[s].second[next->first] /= 100;
+		s = next->first;
+	}
+
+	cout << endl;
+}
+```
+
+This 
+
+
 
 
 Quick aside, this simplifies the -I and -L flags for compiling programs that include glib. I installed glib with homebrew, and gcc wouldn't recognize the glib.h header for some reason, so I had to do this.
