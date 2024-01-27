@@ -8,6 +8,7 @@ Building anything that is more than a couple of files of code on my mac has been
 I have a compact pc for these cases, but I do not have a monitor for it. Now I just use a docker container.
 
 
+Create this docker compose file in a folder:
 ~/myfolder/docker-compose.yml
 ```yml
 version: "3"
