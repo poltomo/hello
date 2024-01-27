@@ -14,26 +14,33 @@ Most of my experience is split between courses, internships, personal projects, 
 
 These are just the IMPORTANT courses I have taken:
 
-1. ICS 33		Intermediate Programming with Python
+1. ICS 46		Data Structures and Algorithms
 
-2. ICS 45C		Programming in C++
+2. CS 178		Machine Learning
 
-3. ICS 6D		Discrete Math
+3. CS 171		Artificial Intelligence
 
-4. ICS 51		Computer Organization
+4. CS 177		Probability in Computer Science
 
-5. MATH 3A		Linear Algebra
+5. CS 122a		Datbases & Data Management
 
-6. ICS 46		Data Structures and Algorithms
+6. ICS 33		Intermediate Programming with Python
 
-7. CS 178		Machine Learning
+7. ICS 45C		Programming in C++
+
+8. ICS 6D		Discrete Math
+
+9. ICS 51		Computer Organization
+
+10. ICS 53		Systems Engineering
+
+11. MATH 3A		Linear Algebra
 
 
 
 ## Internships
 
 1. Intel		Software Engineer Intern
-
 2. Fedex Ground		Software Engineer Coop
 
 
@@ -42,16 +49,13 @@ These are just the IMPORTANT courses I have taken:
 
 1. Private Cloud Resource Pool using Linux and Openstack
 2. Java Spring Boot REST API
-
 3. My next project is currently in the works. Stay posted!
 
 
 
 ## Competetive Programming
 
-I've been doing competive programming on hackerrank, leetcode, cses, and atcoder.
-
-My codesignal report is quite good now. See for yourself:
+[codeforces](https://codeforces.com/profile/thejamba)
 [report](https://app.codesignal.com/evaluation-result/YX2cpBpgifYv9LjE6?accessToken=8xYonWqgz42msHsYF-irrjtBPsq5q8p74RJoqYacA9)
 
 ## Other

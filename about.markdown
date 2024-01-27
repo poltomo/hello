@@ -4,8 +4,11 @@ title: about
 # permalink: /hello/about/
 ---
 
-I've been doing competitive programming for quite a while now, so I'll be writing editorials here about problems I find cool.
+September 8, 2023
+I will write editorials to various competitive programming problems that I find cool. The problems I do are usually from cses.fi, HackerRank assessments, and leetcode.
 
-In time though, you'll find all sorts of neat things here: stuff related to math, computers, programming, books, drawing, monkeys, maps, chemistry, calendars. That's not at all exhaustive, but I hope it gives you an idea of what this site is about.
+November 9, 2023
+Since I want to increase the pace I solve problems, I cannot write about every problem, so I will just write quick editorials after contests. My goal with writing a short editorial is to make sure the intuition behind a problem sticks for longer. Now, I primarily do problems from codeforces, atcoder, cses.fi, and HackerRank tests.
 
-Also, poltomo is just a made up word I came up with.
+January 26, 2024
+On top of problem editorials, I now post updates on projects and ideas I have.
