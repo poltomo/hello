@@ -8,7 +8,7 @@ Building anything that is more than a couple of files of code on my mac has been
 I have a compact pc for these cases, but I do not have a monitor for it. Now I just use a docker container.
 
 
-docker-compose.yml
+~/myfolder/docker-compose.yml
 ```yml
 version: "3"
 services:
@@ -25,12 +25,38 @@ services:
       - SYS_PTRACE
 ```
 
+
+
+In the same directory as my docker-compose.yml (~/myfolder/):
 ```
 docker compose run --name=mycontainer dev bash
 ```
 
-In the container now:
+Then make the mounted folder writable:
+```
+sudo chmod +w ~/myfolder
+```
+
+In the container:
 ```
 apt update
-apt install build-essentials vim glpk
+apt install build-essentials vim
+```
+
+Now I can just build things and run in the container or cross compile for the host machine.
+
+
+Useful commands:
+```
+# start the container when the docker daemon is running
+docker start -i mycontainer
+
+# stop the container
+docker stop mycontainer
+
+# opens a bash container in the running container
+docker exec -it mycontainer bash
+
+# remove all stopped containers
+docker container prune
 ```
