@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "ubuntu container"
+date:   2023-12-31 07:30:00 -0700
+---
+
+Building anything that is more than a couple of files of code on my mac has been really annoying and tedious.
+I have a compact pc for these cases, but I do not have a monitor for it. Now I just use a docker container.
+
+
+docker-compose.yml
+```yml
+version: "3"
+services:
+  dev:
+    image: arm64v8/ubuntu
+    platform: linux/arm64
+    volumes:
+      - .:/root/myfolder
+    working_dir: /root
+    network_mode: host
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
+```
+
+```
+docker compose run --name=mycontainer dev bash
+```
+
+In the container now:
+```
+apt update
+apt install build-essentials vim glpk
+```
