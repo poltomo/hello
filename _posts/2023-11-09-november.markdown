@@ -2,23 +2,14 @@
 layout: post
 title:  "November 9, 2023"
 date:   2023-11-09 15:06:34 -0700
-# categories:
-# permalink:
 ---
-
-Here's some cool things I've learned.
-
-
 # Horner's Rule
-
-I've used this for rolling hashes, but I never knew it had a name. Horner's Rule is a good way to compute a polynomial expression.
-
 F = a0 * x^0 + a1 * x^1 + a2 * x^2 + ... + an * x^n
 F is an nth degree polynomial
 
 F = ( ( (an * x) + an-1) * x) + an-2) * x ...
 
-{% highlight python %}
+```python
 # A is an array of coefficients
 def Horner(A, x : int) -> int:
     ans = 0
@@ -26,9 +17,4 @@ def Horner(A, x : int) -> int:
         ans = (ans + a) * x
 
     return ans
-{% endhighlight %}
-
-
-# CSES - Elevator Rides
-
-WILL FINISH LATER
+```

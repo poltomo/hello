@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "order-1 word markov chain"
+title:  "order-1 markov chain"
 date:   2023-12-31 07:30:00 -0700
 ---
 

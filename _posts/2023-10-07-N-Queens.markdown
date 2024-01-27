@@ -5,9 +5,7 @@ date:   2023-10-07 15:06:34 -0700
 # categories:
 # permalink:
 ---
-
-This is my first post of October 2023.
-
+This is the first post of October 2023.
 ---
 
 [wikipedia](https://en.wikipedia.org/wiki/Eight_queens_puzzle)
@@ -23,10 +21,9 @@ The intuition behind backtracking here is that when you place a queen, say in th
 
 
 solution 1:
-{% highlight c++ %}
+```c++
 #include<iostream>
 #include<array>
-
 
 using namespace std;
 
@@ -101,12 +98,12 @@ int main() {
 
 	cout << cnt << endl;
 }
-{% endhighlight %}
+```
 
 You can also do this iteratively using a stack to perform the depth first search.
 
 solution 2:
-{% highlight c++ %}
+```c++
 #include<iostream>
 #include<array>
 #include<stack>
@@ -198,14 +195,13 @@ int main() {
 	cout << cnt << endl;
 }
 
-{% endhighlight %}
+```
 
 
-I think this problem is pretty neat. It came up in my data structures course. Professor Schindler had a lot to say about it. After class, he likened backtracking to some AI search techniques, but the point was lost on me since I was not paying attention. He also said something about rubix cubes.
+I think this problem is pretty neat. It came up in my data structures course and my professor had a lot to say about it. 
 
 [backtracking](https://en.wikipedia.org/wiki/Backtracking#Further_reading)
 
 solution 3:
 [usaco guide](https://usaco.guide/bronze/complete-rec?lang=cpp#backtracking)
-
-The usaco guide details a better way to keep track of whether diagonals are threatened. I did not use this, but it is a better technique so check it out.
+The usaco guide details a better way to keep track of whether diagonals are threatened.
