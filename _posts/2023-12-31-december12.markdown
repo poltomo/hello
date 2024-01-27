@@ -47,16 +47,16 @@ g++ clean_book.cpp -o clean_book
 ./clean_book dracula.txt dracula_clean.txt
 ```
 
-I implemented the markov chaing as a map of maps. There's implementations that use less space
+I implemented the markov chaing as a map of maps. There's implementations that use less space.\
 
 I made it so that the next word chosen is the most common word that is to the right of the current word.
-So, if "apple" appears 5 times after "The" while "banana" appears only 3 times after "The", then "apple" will follow "The" in the text.
+So, if "hat" appears 5 times after "the" while "cat" appears only 3 times after "the", then "hat" will follow "the" in the markov text.
 A hacky solution to avoid loops, is to decrease the observed frequency of a chosen successor to a word.
 
-
-the hat cat.
-the hat. the hat. the hat. the hat.
-the cat. the cat. the cat.
+text:\
+the hat cat.\
+the hat. the hat. the hat. the hat.\
+the cat. the cat. the cat.\
 ```
 	the	hat	cat
 the	0	5	3
