@@ -56,7 +56,7 @@ A hacky solution to avoid loops, is to decrease the observed frequency of a chos
 text:\
 the hat cat.\
 the hat. the hat. the hat. the hat.\
-the cat. the cat. the cat.\
+the cat. the cat. the cat.
 ```
 	the	hat	cat
 the	0	5	3

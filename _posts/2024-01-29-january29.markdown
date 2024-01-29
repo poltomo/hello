@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "grouping - atcoder dp contest"
+date:   2023-12-31 07:30:00 -0700
+---
+# U - Grouping
+Educational DP Contest
+[grouping](https://atcoder.jp/contests/dp/tasks/dp_u)
+
+You want to put n rabbits in groups, and you get a value $a_{ij}$ for having rabbit i and rabbit j in the same group.
+
+There's 2^n possible subsets out of these rabbits.
+
+If you have a set of rabbits A, you could perform no split and take the sum of all $a_{ij}$. But you could also perform a split into sets B and C, such that B$\cup$C = A, then:
+
+best_score(A) = max(no_split_best_score(A), best_score(B) + best_score(C) : for all splits B and C)
+
+```c++
+#include<iostream>
+
+#define REP(i, n) for(int i = 0;i < n;++i)
+
+using namespace std;
+
+int n;
+
+int A[16][16];
+
+long long dp[1 << 16];
+
+int main() {
+	cin >> n;
+	
+	REP(i, n) {
+		REP(j, n) {
+			cin >> A[i][j];
+		}
+	}
+	
+	unsigned mask = 1;
+	
+	for (;mask < (1<<n);++mask) {
+		int ffs = __builtin_ctz(mask);
+		
+		dp[mask] = dp[mask^(1<<ffs)];
+		
+		REP(i, n) {
+			if ((mask^(1<<ffs)) & (1<<i))
+				dp[mask] = (dp[mask] + A[ffs][i]);
+		}
+	}
+	
+	//REP(i, (1<<n)) cout << i << ' ' << dp[i] << endl;
+	//cout << endl;
+	
+	mask = 1;
+	
+	for (;mask < (1<<n);++mask) {
+		unsigned group1 = 0;
+		
+		while (group1 < mask / 2 + 1) {
+			if ((group1 ^ (mask - group1)) == mask)
+				dp[mask] = max(dp[mask], (dp[group1] + dp[mask - group1]));
+			
+			++group1;
+		}
+	}
+	
+	cout << dp[(1<<n)-1] << endl;
+}
+```
