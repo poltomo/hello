@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ubuntu container"
-date:   2023-12-31 07:30:00 -0700
+date:   2024-01-26 07:30:00 -0700
 ---
 
 Building anything that is more than a couple of files of code on my mac has been really annoying and tedious.

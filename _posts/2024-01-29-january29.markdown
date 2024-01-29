@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "grouping - atcoder dp contest"
-date:   2023-12-31 07:30:00 -0700
+date:   2024-01-29 07:30:00 -0700
 ---
 # U - Grouping
 Educational DP Contest
