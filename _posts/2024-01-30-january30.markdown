@@ -7,18 +7,18 @@ date:   2024-01-30 07:30:00 -0700
 educational dynamming programming contest\
 [grouping](https://atcoder.jp/contests/dp/submissions/me)
 
-There's n coins, and 2^n possible flip sequences. There's a closed form expression for this when the probability of the coins being heads is the same for all coins. That is not the case here.\
+There's n coins, and 2^n possible flip sequences. There's a closed form expression for this when the probability of the coins being heads is the same for all coins. That is not the case here.
 
-The probability of a sequence of independent flips is the product of each flip's proability (p_i if heads and (1 - p_i) if tails).\
+The probability of a sequence of independent flips is the product of each flip's proability (p_i if heads and (1 - p_i) if tails).
 
-You could sum up all of those products in which there's more heads than tails (# heads >= n/2 + 1). However, n < 3000, and there's (n choose (n/2 + 1)) of these products.\
+You could sum up all of those products in which there's more heads than tails (# heads >= n/2 + 1). However, n < 3000, and there's (n choose (n/2 + 1)) of these products.
 
-Notice that these products can share segments:\
-P(H1 T2 H3 T4 H5) = P(H1 T2 H3 T4) * P(H5)\
-P(H1 T2 H3 T4 T5) = P(H1 T2 H3 T4) * P(T5)\
+Notice that these products can share segments:
+P(H1 T2 H3 T4 H5) = P(H1 T2 H3 T4) * P(H5)
+P(H1 T2 H3 T4 T5) = P(H1 T2 H3 T4) * P(T5)
 
-A very intuitive dynammic programming solution follows:\
-dp[i][j] = P(getting i heads in first j flips) =  P(Hj) * P(getting i - 1 heads in the first j - 1 flips) + P(Tj) * P(getting i heads in the first j - 1 flips)\
+A very intuitive dynammic programming solution follows:
+dp[i][j] = P(getting i heads in first j flips) =  P(Hj) * P(getting i - 1 heads in the first j - 1 flips) + P(Tj) * P(getting i heads in the first j - 1 flips)
 [my submission](https://atcoder.jp/contests/dp/submissions/49833551)
 ```c++
 #include<iostream>
