@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "coins - atcoder contest"
+date:   2024-01-30 07:30:00 -0700
+---
+# I - Coins
+educational dynamming programming contest\
+[grouping](https://atcoder.jp/contests/dp/submissions/me)
+
+There's n coins, and 2^n possible flip sequences. There's a closed form expression for this when the probability of the coins being heads is the same for all coins. That is not the case here.\
+
+The probability of a sequence of independent flips is the product of each flip's proability (p_i if heads and (1 - p_i) if tails).\
+
+You could sum up all of those products in which there's more heads than tails (# heads >= n/2 + 1). However, n < 3000, and there's (n choose (n/2 + 1)) of these products.\
+
+Notice that these products can share segments:\
+P(H1 T2 H3 T4 H5) = P(H1 T2 H3 T4) * P(H5)\
+P(H1 T2 H3 T4 T5) = P(H1 T2 H3 T4) * P(T5)\
+
+A very intuitive dynammic programming solution follows:\
+dp[i][j] = P(getting i heads in first j flips) =  P(Hj) * P(getting i - 1 heads in the first j - 1 flips) + P(Tj) * P(getting i heads in the first j - 1 flips)\
+[my submission](https://atcoder.jp/contests/dp/submissions/49833551)
+```c++
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int n;
+
+long double P[3000];
+long double dp[3000][3000];
+
+int main() {
+	cin >> n;
+	
+	for (int i = 1;i < n + 1;++i) cin >> P[i];
+	
+	dp[0][0] = 1;
+	
+	for (int flips = 1;flips < n + 1;++flips)
+		dp[0][flips] = (1.0 - P[flips]) * dp[0][flips - 1];
+	
+	for (int flips = 1;flips < n + 1;++flips) {
+		for (int heads = 1;heads <= flips;++heads) {
+			dp[heads][flips] = P[flips] * dp[heads - 1][flips - 1] + (1 - P[flips]) * dp[heads][flips - 1];
+		}
+	}
+	
+	long double more_heads = 0;
+	
+	for (int heads = n/2 + 1;heads < n + 1;++heads) more_heads += dp[heads][n];
+	
+	cout << std::setprecision(9) << more_heads << endl;
+}
+
+```
