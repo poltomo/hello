@@ -5,7 +5,7 @@ date:   2024-01-30 07:30:00 -0700
 ---
 # I - Coins
 educational dynamming programming contest\
-[grouping](https://atcoder.jp/contests/dp/submissions/me)
+[coins](https://atcoder.jp/contests/dp/submissions/me)
 
 There's n coins, and 2^n possible flip sequences. There's a closed form expression for this when the probability of the coins being heads is the same for all coins. That is not the case here.
 
