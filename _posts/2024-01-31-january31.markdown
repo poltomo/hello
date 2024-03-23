@@ -1,61 +1,12 @@
 ---
 layout: post
-title:  "graph coloring and linear programming"
+title:  "graph coloring"
 date:   2024-01-31 07:30:00 -0700
 ---
-## graph coloring and linear programming
-related: constraint satisfaction problems\
+## graph coloring
 
-I recently had this idea for formatting graph coloring as an LP problem.
-Say, I have a connected graph of three vertices: x1, x2, and x3. I want to find a color assignment that uses the least number of distinct colors such that no two adjacent vertices have the same color.
-
-My first idea was to have the constraints use absolute differencess:
-|x1 - x2| >= 1
-
-Then, I had a better idea:
-
-x1 ---- x2
- \      /
-  \    /
-   \  /
-    x3
-
-# example.lp
-```
-Minimize
- obj: + x1 + x2 + x3
-
-Subject To
- c1: + x1 - x2 >= 1
- c2: + x1 - x3 >= 1
- c3: + x2 - x3 >= 1
-
-Bounds
- x1 >= 0
- x2 >= 0
- x3 >= 0
-
-End
-
-```
-The best thing about it is that it worked with real values and still found and integer assignment
-
-x1 = 2
-x2 = 1
-x3 = 0
-
-I will test this more rigorously though. I only tried the complete graph of 3 vertices.
-
-
-```
-apt install glpk
-glpsol -lp example.lp > example_output.txt
-```
-Soon, I will try this for bigger graphs.
-
-
-Also, here's my Welsh-Powell greedy coloring implementation.
-```
+Welsh-Powell greedy coloring demo
+```c++
 #include<iostream>
 #include<algorithm>
 #include<stdlib.h>
@@ -144,4 +95,41 @@ int main() {
 	REP(i, N) cout << i << ' ' << C[i] << '\n';
 	cout << chromatic << endl;
 }
+```
+
+I had this idea for formatting graph coloring as an LP problem. Too bad it doesn't work.
+Here's a connected graph of three vertices: x1, x2, and x3.
+I want to find a color assignment that uses the least number of distinct colors such that no two adjacent vertices have the same color.
+
+```
+x1 ---- x2
+ \      /
+  \    /
+   \  /
+    x3
+```
+
+example.lp
+```
+Minimize
+ obj: + x1 + x2 + x3
+
+Subject To
+ c1: + x1 - x2 >= 1
+ c2: + x1 - x3 >= 1
+ c3: + x2 - x3 >= 1
+
+Bounds
+ x1 >= 0
+ x2 >= 0
+ x3 >= 0
+
+End
+
+```
+
+
+```
+apt install glpk
+glpsol -lp example.lp > example_output.txt
 ```

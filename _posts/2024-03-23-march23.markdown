@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "Codeforces Round 936 (Div. 2), problem: (C) Tree Cutting"
+date:   2024-03-23 07:30:00 -0700
+---
+# C - Tree Cutting
+educational dynamming programming contest\
+[Tree Cutting](https://codeforces.com/contest/1946/problem/C)
+
+The important thing to know is that if you can cut a tree into components whose size >= x,
+then the same cut has components with size >= x - 1.
+
+The other thing to know is that k cuts produces k + 1 components.
+
+Using the first fact you can do binary search on the possible x values: [1 ... (n/(k+1) + 1)].
+
+Why the upper bound of (n/(k+1) + 1)?
+If you have a tree with n nodes which you want to split into k + 1 components. The biggest x could be is n/(k + 1). I added the 1 to account for when n is not divisible by k + 1.
+
+Binary search fixes the x value for you. Know you have to be able to check if you can cut the tree into k + 1 components with size >= x.
+
+You can greedily do this. Check subtrees in increasing order of their size (smaller subtrees first). If their size >= x, cut them off into a new component.
+
+
+```
+int check(int u, int x, int& num_components) {
+	int cnt = 1;
+	
+	for (int v : adj[u]) {
+		if (v == parent[u]) continue;
+		
+		cnt += check(v, x, num_components);
+	}
+	
+	if (cnt >= x) {
+		++num_components;
+		cnt = 0;
+	}
+	
+	return cnt;
+}
+```
+
+
+[my submission](https://codeforces.com/contest/1946/submission/252999559)

@@ -11,19 +11,21 @@ I have a compact pc for these cases, but I do not have a monitor for it. Now I j
 I created this docker compose file in a folder:\
 ~/myfolder/docker-compose.yml
 ```yml
-version: "3"
+version: "1"
 services:
   dev:
-    image: arm64v8/ubuntu
-    platform: linux/arm64
+    image: amd64/ubuntu
+    platform: linux/amd64
     volumes:
-      - .:/root/myfolder
+      - .:/root/myfolder2
     working_dir: /root
+    cpus: 2
     network_mode: host
     security_opt:
       - seccomp:unconfined
+    privileged: true
     cap_add:
-      - SYS_PTRACE
+      - ALL
 ```
 
 
