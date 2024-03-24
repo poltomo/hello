@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "codeforces round 936, problem C Tree Cutting"
+title:  "codeforces round 936, problem C tree cutting"
 date:   2024-03-23 07:30:00 -0700
 ---
 # C - Tree Cutting
@@ -20,6 +20,7 @@ If you have a tree with n nodes which you want to split into k + 1 components. T
 Binary search fixes the x value for you. Know you have to be able to check if you can cut the tree into k + 1 components with size >= x.
 
 You can greedily do this. Check subtrees in increasing order of their size (smaller subtrees first). If their size >= x, cut them off into a new component.
+You can check tries in this order with depth first search. It's in the name: depth first.
 
 
 ```
@@ -34,7 +35,7 @@ int check(int u, int x, int& num_components) {
 	
 	if (cnt >= x) {
 		++num_components;
-		cnt = 0;
+		cnt = 0;									// parent can not use this subtree's node count as it goes into our new component
 	}
 	
 	return cnt;
