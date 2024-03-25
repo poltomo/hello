@@ -4,8 +4,8 @@ title:  "codeforces round 936, problem C tree cutting"
 date:   2024-03-23 07:30:00 -0700
 ---
 # C - Tree Cutting
-educational dynamming programming contest\
-[Tree Cutting](https://codeforces.com/contest/1946/problem/C)
+[Tree Cutting](https://codeforces.com/contest/1946/problem/C)  
+[my submission](https://codeforces.com/contest/1946/submission/252999559)  
 
 The important thing to know is that if you can cut a tree into components whose size >= x,
 then the same cut has components with size >= x - 1.
@@ -41,6 +41,3 @@ int check(int u, int x, int& num_components) {
 	return cnt;
 }
 ```
-
-
-[my submission](https://codeforces.com/contest/1946/submission/252999559)

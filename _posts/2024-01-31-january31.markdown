@@ -5,7 +5,47 @@ date:   2024-01-31 07:30:00 -0700
 ---
 ## graph coloring
 
-Welsh-Powell greedy coloring demo
+I had this idea for formatting graph coloring as an LP problem. Too bad it doesn't work.
+Here's a connected graph of three vertices: x1, x2, and x3.  
+I want to find a color assignment that uses the least number of distinct colors such that no two adjacent vertices have the same color.
+
+```
+x1 ---- x2
+ \      /
+  \    /
+   \  /
+    x3
+```
+
+example.lp
+```
+Minimize
+ obj: + x1 + x2 + x3
+
+Subject To
+ c1: + x1 - x2 >= 1
+ c2: + x1 - x3 >= 1
+ c3: + x2 - x3 >= 1
+
+Bounds
+ x1 >= 0
+ x2 >= 0
+ x3 >= 0
+
+End
+
+```
+It works for this connected graph, but would give a terrible answer for a graph that was just a long string of vertices:  
+x1 ---- x2 ---- x3 ---- x4  
+
+I did this mainly as a demo of the GNU lp kit. Try some linear programs for yourself.
+```
+apt install glpk
+glpsol -lp example.lp > example_output.txt
+```
+
+
+Welsh Powell graph coloring implementation
 ```c++
 #include<iostream>
 #include<algorithm>
@@ -95,41 +135,4 @@ int main() {
 	REP(i, N) cout << i << ' ' << C[i] << '\n';
 	cout << chromatic << endl;
 }
-```
-
-I had this idea for formatting graph coloring as an LP problem. Too bad it doesn't work.
-Here's a connected graph of three vertices: x1, x2, and x3.
-I want to find a color assignment that uses the least number of distinct colors such that no two adjacent vertices have the same color.
-
-```
-x1 ---- x2
- \      /
-  \    /
-   \  /
-    x3
-```
-
-example.lp
-```
-Minimize
- obj: + x1 + x2 + x3
-
-Subject To
- c1: + x1 - x2 >= 1
- c2: + x1 - x3 >= 1
- c3: + x2 - x3 >= 1
-
-Bounds
- x1 >= 0
- x2 >= 0
- x3 >= 0
-
-End
-
-```
-
-
-```
-apt install glpk
-glpsol -lp example.lp > example_output.txt
 ```

@@ -4,16 +4,16 @@ title:  "grouping - atcoder contest"
 date:   2024-01-29 07:30:00 -0700
 ---
 # U - Grouping
-educational dynamming programming contest\
+educational dynamming programming contest  
 [grouping](https://atcoder.jp/contests/dp/tasks/dp_u)
 
 You want to put n rabbits in groups, and you get a value a_ij for having rabbit i and rabbit j in the same group.
 
 There's 2^n possible subsets out of these rabbits.
 
-If you have a set of rabbits A, you could perform no split and take the sum of all $a_{ij}$. But you could also perform a split into sets B and C, such that B$\cup$C = A, then:
+If you have a set of rabbits A, you could perform no split and take the sum of all a_ij. But you could also perform a split into sets B and C, such that B union C = A, then:  
 
-best_score(A) = max(no_split_score(A), best_score(B) + best_score(C) : for all splits B and C)\
+best_score(A) = max(no_split_score(A), best_score(B) + best_score(C) : for all splits B and C)  
 
 [my submission](https://atcoder.jp/contests/dp/submissions/49798700)
 ```c++
