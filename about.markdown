@@ -15,9 +15,6 @@ On top of problem editorials, I now post updates on projects and ideas I have.
   
 March 25, 2024  
 Now I am seriously trying to push my codeforces rank.  
-This is me on codeforces:  
-[thejamba](https://codeforces.com/profile/thejamba)  
-
+This is me on codeforces: [thejamba](https://codeforces.com/profile/thejamba)  
 Here's a little about me:  
-my name is Varun. I study computer science at UCI. I also interned at Intel for some time
-Also, right now, I am in London on vacation.
+my name is Varun. I study computer science at UCI. I also interned at Intel for some time.

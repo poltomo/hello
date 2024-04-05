@@ -23,7 +23,7 @@ You can greedily do this. Check subtrees in increasing order of their size (smal
 You can check tries in this order with depth first search. It's in the name: depth first.
 
 
-```
+```c++
 int check(int u, int x, int& num_components) {
 	int cnt = 1;
 	
