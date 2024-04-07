@@ -1,64 +1,81 @@
 ---
 layout: post
-title:  "recollection of lecture by Tarjan: Fast and Simple Sorting Using Partial Information"
-date:   2024-07-04 03:13:00 -0700
+title:  "cses Range Updates and Sums"
+date:   2024-04-04 03:13:00 -0700
 ---
+[problem](https://cses.fi/problemset/task/1735/)  
+[my submission](https://cses.fi/paste/4f4b13d8100becce8830e1/)  
 
-[distinguished lecture](https://ics.uci.edu/event/fast-and-simple-sorting-using-partial-information/)  
+The idea is to use a lazy segment tree to get the sum of ranges in log N time complexity.
 
-Last Friday, there was a lecture by Robert Tarjan about sorting with prior information
-about the sorted order. I thought it was pretty cool. I saw a lot of UCI's computer science
-professors there. Its almost like it was held at UCI or something.  
-
-Turns out, it was actually held at UCI by the ACO Center.  
-[ACO center](https://acoi.ics.uci.edu)  
-
-I forgot some things that were mentioned, and there's things that I remember being brought up briefly
-but also forget where they fit into the lecture. Here's those things:  
-Ellipsoid method  
-Splay trees  
-
-Here is my understanding of what was said:  
-You can represent a sorted total order as a DAG in which vertices are items and there
-is an edge from item a to item b if b > a.
+```c++
+int A[N];
+long long t[N << 2];
 ```
-a ---> b
+The standard segment tree idea is that the sum of a vertex's segment is equal to the sum of vertex's children's segments.
+This is made clear in a segment tree's construction.
+```c++
+void build(int i, int l, int r) {
+	if (l == r) {
+		t[i] = A[l];
+	}
+	else {
+		int m = l + (r - l) / 2;
+		
+		build(i<<1, l, m);
+		build(i<<1|1, m + 1, r);
+		t[i] = t[i<<1] + t[i<<1|1];
+	}
+}
 ```
-Say, n is the number of items.  
-If all n choose 2 comparisons have been made. You would have a complete graph
-whose topological sort would always yield the true total order.  
 
-However, if you had no comparisons made yet, or zero edges in this graph of n vertices,
-then there's n! possible orderings that topological sort could give you.  
+However, an eager as opposed to lazy range update on a segment tree might affect many ranges, degrading the log N time complexity of operations.
+For example, adding 1 to every element in the array would require the entire tree to be calculated again.  
 
-Also, here's my topological sort implementation for the cses problem, [course schedule](https://cses.fi/problemset/task/1679).  
-[my submission](https://cses.fi/paste/a91f59b9d7a1d0f3770c5f/)  
+You can think of a lazy update to a range as completed for that range, but pending for its sub-range. Prior to any descent into those subranges,
+you should propagate the changes.  
 
-Tarjan was focusing on situations when you are given the results of some comparisons prior to sorting as an incomplete DAG
+For example, say I add 1 to all values in the array: I can increase the segment tree's root sum and remember that 1 was added to all values with a lazy tag.
+Any reads to that exact range will just return the range's sum. But now what if I want the sum of a range within the one I just lazily updated? Look below.
+
+Ignore the set operation for now. Notive the new lazy add member added to each vertex.
+```c++
+struct node {
+	ll sum;
+	ll lz_add;
+	node() {}
+} t[N << 2];
 ```
----------------
-|             |
-|             v
-a ---> b      c  ---> d
+
+```c++
+void add(int i, int l, int r, int a, int b, ll x) {
+	if (a > b) {
+		return;
+	}
+	else if (l == a && r == b) {
+		t[i].lz_add += x;
+		t[i].sum += x * (r - l + 1);
+	}
+	else {
+		// 1. what should be done right here?
+		
+		int m = l + (r - l) / 2;
+		add(i<<1, l, m, a, min(b, m), x);
+		add(i<<1|1, m + 1, r, max(a, m + 1), b, x);
+		
+		// 2. and what should be done here?
+	}
+}
 ```
-A solution is to topological sort the DAG using a heap instead of a queue.
-This way, you always get the right sorted order. A big consideration however is the choice of heap.
-It had something to do with the working set of a heap, which is the maximum number of elements that
-are in the heap while item i is in the heap.  
 
-I forget the complexity of topological heapsort with a binary heap.  
-It might be better than plain heapsort depending on how informative the DAG is. Here's the most informative DAG you can get  
+1. Prior to any descent into those subranges, you have to propagate the changes you made and clear the lazy tag.  
+
+2. Since you are going to update a lower range lazily as well, the segment tree invariant needs to be upholded.  
+
+item 2 is quite simple:
+```c++
+t[i] = t[i<<1] + t[i<<1|1];
 ```
-a ---> b ---> c ---> d
-```
-In this case, for topological heapsort, the maximum number of elements in the heap at one time would be 1. On the
-other hand, regular heapsort would put all elements on the heap. Its still O(nlogn), but the working sets will be bigger.  
 
-Tarjan's solution was to use a pair heap for topological sorting. This had to do with getting a good bound on the working set.
-The complexity was O(n + m + logT), where n is the number of vertices, m is the number of given comparisons, and T is the number of
-possible total orders for the given DAG. Notice that if no comparisons are given, you get n + log(n!), which is n + nlogn as n gets big.  
-
-Did you know that Tarjan was involved in making Fibonacci heaps?
-
-A question that I asked: how many comparisons prior to sorting is sufficient for this to be the best option for sorting?  
-the jist of Tarjan's answer: Enough to get a reasonably informative DAG that cuts down on T. Getting long runs are especially helpful.  
+I will leave item 1 to you. Look at my submission or the usaco guide if you are confused.
+[USACO guide](https://usaco.guide/plat/RURQ)
