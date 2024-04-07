@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "Lecture by Tarjan: Fast and Simple Sorting Using Partial Information"
+date:   2024-07-04 03:13:00 -0700
+---
+
+[distinguished lecture](https://ics.uci.edu/event/fast-and-simple-sorting-using-partial-information/)  
+
+Last Friday, there was a lecture by Robert Tarjan about sorting with prior information
+about the sorted order. I thought it was pretty cool. I saw a lot of UCI's computer science
+professors there. Its almost like it was held at UCI or something.  
+
+Turns out, it was actually held at UCI by the ACO Center.  
+[ACO center](https://acoi.ics.uci.edu)  
+
+I forgot some things that were mentioned, and there's things that I remember being brought up briefly
+but also forget where they fit into the lecture. Here's those things:  
+Ellipsoid method  
+Splay trees  
+
+Here is my understanding of what was said:  
+You can represent a sorted total order as a DAG in which vertices are items and there
+is an edge from item a to item b if b > a.
+```
+a ---> b
+```
+Say, n is the number of items.  
+If all n choose 2 comparisons have been made. You would have a complete graph
+whose topological sort would always yield the true total order.  
+
+However, if you had no comparisons made yet, or zero edges in this graph of n vertices,
+then there's n! possible orderings that topological sort could give you.  
+
+Also, here's my topological sort implementation for the cses problem, [course schedule](https://cses.fi/problemset/task/1679).  
+[my submission](https://cses.fi/paste/a91f59b9d7a1d0f3770c5f/)  
+
+Tarjan was focusing on situations when you are given the results of some comparisons prior to sorting as an incomplete DAG
+```
+---------------
+|             |
+|             v
+a ---> b      c  ---> d
+```
+A solution is to topological sort the DAG using a heap instead of a queue.
+This way, you always get the right sorted order. A big consideration however is the choice of heap.
+It had something to do with the working set of a heap, which is the maximum number of elements that
+are in the heap while item i is in the heap.  
+
+I forget the complexity of topological heapsort with a binary heap.  
+It might be better than plain heapsort depending on how informative the DAG is. Here's the most informative DAG you can get  
+```
+a ---> b ---> c ---> d
+```
+In this case, for topological heapsort, the maximum number of elements in the heap at one time would be 1. On the
+other hand, regular heapsort would put all elements on the heap. Its still O(nlogn), but the working sets will be bigger.  
+
+Tarjan's solution was to use a pair heap for topological sorting. This had to do with getting a good bound on the working set.
+The complexity was O(n + m + logT), where n is the number of vertices, m is the number of given comparisons, and T is the number of
+possible total orders for the given DAG. Notice that if no comparisons are given, you get n + log(n!), which is n + nlogn as n gets big.  
+
+Did you know that Tarjan was involved in making Fibonacci heaps?
+
+A question that I asked: how many comparisons prior to sorting is sufficient for this to be the best option for sorting?  
+the jist of Tarjan's answer: Enough to get a reasonably informative DAG that cuts down on T. Getting long runs are especially helpful.  
+
