@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lecture by Tarjan: Fast and Simple Sorting Using Partial Information"
+title:  "recollection of lecture by Tarjan: Fast and Simple Sorting Using Partial Information"
 date:   2024-07-04 03:13:00 -0700
 ---
 
@@ -62,4 +62,3 @@ Did you know that Tarjan was involved in making Fibonacci heaps?
 
 A question that I asked: how many comparisons prior to sorting is sufficient for this to be the best option for sorting?  
 the jist of Tarjan's answer: Enough to get a reasonably informative DAG that cuts down on T. Getting long runs are especially helpful.  
-
