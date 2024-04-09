@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "recollection of lecture by Tarjan"
+title:  "my recollection of lecture by Tarjan"
 date:   2024-04-07 03:13:00 -0700
 ---
 
@@ -63,3 +63,5 @@ Did you know that Tarjan was involved in making Fibonacci heaps?
 
 A question that I asked: how many comparisons prior to sorting is sufficient for this to be the best option for sorting?  
 the jist of Tarjan's answer: Enough to get a reasonably informative DAG that cuts down on T. Getting long runs are especially helpful.  
+
+Big thanks to Tarjan for the lecture.
