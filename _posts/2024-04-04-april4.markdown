@@ -7,7 +7,7 @@ date:   2024-04-07 03:13:00 -0700
 # Fast and Simple Sorting Using Partial Information
 [distinguished lecture](https://ics.uci.edu/event/fast-and-simple-sorting-using-partial-information/)  
 
-Last Friday, there was a lecture by Robert Tarjan about sorting with prior information
+Last Friday, there was a lecture by Robert Tarjan about sorting given some information
 about the sorted order. I thought it was pretty cool. I saw a lot of UCI's computer science
 professors there. Its almost like it was held at UCI or something.  
 
