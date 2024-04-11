@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "my recollection of lecture by Tarjan"
+title:  "summary of lecture by Tarjan"
 date:   2024-04-07 03:13:00 -0700
 ---
 
