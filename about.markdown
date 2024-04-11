@@ -18,3 +18,11 @@ Now I am seriously trying to push my codeforces rank.
 This is me on codeforces: [thejamba](https://codeforces.com/profile/thejamba)  
 Here's a little about me:  
 my name is Varun. I study computer science at UCI. I also interned at Intel for some time.
+  
+April 11, 2024
+The name of the site changed from my github username and moniker to "project by varun". I am not doing all that well in codeforces contests, and I need to find more time to upsolve problems.  
+  
+I am taking [Scientific Computing](https://ics.uci.edu/~xhx/courses/CS206/), [Efficient ML Computing](https://sites.google.com/uci.edu/tomyeh/cs-190295-efficient-ml-comp), and graphical models.
+I'm going to try do some past kaggle or more atcoder heuristic contests.
+  
+In June 2026, I will have graduated, by then I will have to be really proficient in a number of things or I messed up.
