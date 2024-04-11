@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: varun project 2023
+title: project by varun
 email: vnaw4988 (at) gmail (dot) com
 description: by Varun Nawathey
 
-baseurl: /hello # the subpath of your site, e.g. /blog
+baseurl: / # the subpath of your site, e.g. /blog
 url: https://poltomo.github.io # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: north_pyke
 github_username:  poltomo
