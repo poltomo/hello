@@ -9,10 +9,7 @@ date:   2024-04-07 03:13:00 -0700
 
 Last Friday, there was a lecture by Robert Tarjan about sorting given some information
 about the sorted order. I thought it was pretty cool. I saw a lot of UCI's computer science
-professors there. Its almost like it was held at UCI or something.  
-
-Turns out, it was actually held at UCI by the ACO Center.  
-[ACO center](https://acoi.ics.uci.edu)  
+professors there.
 
 I forgot some things that were mentioned, and there's things that I remember being brought up briefly
 but also forget where they fit into the lecture. Here's those things:  
@@ -21,7 +18,7 @@ Splay trees
 
 Here is my understanding of what was said:  
 You can represent a sorted total order as a DAG in which vertices are items and there
-is an edge from item a to item b if b > a.
+is an edge from item a to item b if a and b have been compared and b > a.
 ```
 a ---> b
 ```
@@ -30,7 +27,7 @@ If all n choose 2 comparisons have been made. You would have a complete graph
 whose topological sort would always yield the true total order.  
 
 However, if you had no comparisons made yet, or zero edges in this graph of n vertices,
-then there's n! possible orderings that topological sort could give you.  
+then there's n! possible orderings that topological sort could give you, only one of which is correct.  
 
 Also, here's my topological sort implementation for the cses problem, [course schedule](https://cses.fi/problemset/task/1679).  
 [my submission](https://cses.fi/paste/a91f59b9d7a1d0f3770c5f/)  
@@ -42,7 +39,7 @@ Tarjan was focusing on situations when you are given the results of some compari
 |             v
 a ---> b      c  ---> d
 ```
-A solution is to topological sort the DAG using a heap instead of a queue.
+A solution to this is to topological sort the DAG using a heap instead of a queue.
 This way, you always get the right sorted order. A big consideration however is the choice of heap.
 It had something to do with the working set of a heap, which is the maximum number of elements that
 are in the heap while item i is in the heap.  
