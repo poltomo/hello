@@ -23,4 +23,10 @@ April 11, 2024
 The name of the site changed from my github username to "project by varun". I am not doing all that well in codeforces contests, and I need to find more time to upsolve problems.  
   
 I am taking [Scientific Computing](https://ics.uci.edu/~xhx/courses/CS206/), [Efficient ML Computing](https://sites.google.com/uci.edu/tomyeh/cs-190295-efficient-ml-comp), and graphical models.
-I'm going to try do some past kaggle and atcoder heuristic contests.
+I'm going to try do some past kaggle and atcoder heuristic contests.  
+
+April 23, 2024 1:36 pm Tuesday  
+At LA Hacks, I stayed up all night making this vector search thing aided by image encodings. This is not how good work is done. I passed out during the awards ceremony. The same thing happened last time, except last year I made a lame project. At least this time, the Intel sponsor people shouted out my project.  
+
+April 23, 2024 3:57 pm Tuesday  
+I just now received a very exciting email. I will tell more later.
