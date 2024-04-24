@@ -30,3 +30,5 @@ At LA Hacks, I stayed up all night making this vector search thing aided by imag
 
 April 23, 2024 3:57 pm Tuesday  
 I just now received a very exciting email. I will tell more later.
+
+No more posts until October, 2024. I will have something special completed by then.
