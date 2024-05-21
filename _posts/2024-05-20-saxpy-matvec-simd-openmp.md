@@ -83,11 +83,11 @@ s
 
 
 
-Its 4 times as fast because the SIMD vectors are 128 bits wide which is 4 fp32s.
+Its roughly 4 times as fast because the SIMD vectors are 128 bits wide which is 4 fp32s.
 
 ## SIMD intrinsics and OpenMP multithreading
 
-only use multithreading when you have a lot of data. Oftentimes, multithreading is not worth it. You can even slow down functions if memory access patterns are bad. Look up false sharing.
+multithreading is only worth it for large n. Here, I'm using just two threads. Be careful about bad memory access patterns and false sharing. That's not a concern in this case.
 
 
 ```python
@@ -150,6 +150,7 @@ Its even faster!
 ## matrix vector product
 
 
+
 ```python
 W = torch.rand(4,4)
 h = torch.empty(4)
@@ -171,6 +172,8 @@ h
 
 
 ## matvec made faster with SIMD intrinsics
+
+if h = Wx, the ith entry of h is the dot product of the ith row of W and x. This can be extended to matrix multiplications too: C = AB, where the ith column of C is the matrix vector product of A and the ith column of B. There's more optimizations that can be done for matmuls.
 
 
 ```python
