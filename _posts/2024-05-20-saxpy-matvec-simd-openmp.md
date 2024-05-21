@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "saxpy and matvec, ARM SIMD Intrinsics, and OpenMP multithreading"
+title:  "saxpy and matvec, SIMD Intrinsics, and OpenMP multithreading"
 date:   2024-05-20 03:13:00 -0700
 ---
 
-Extending python with C libraries is very useful. Say there's something I want to do with torch tensors that Pytorch does not support; it can be much easier and faster to do the job on the raw float arrays. I can also hand optimize operations this way. This is especially useful for writing your own CUDA kernels.
+Extending python with C libraries is very useful. Say there's something I want to do with torch tensors that Pytorch does not support; it can be much easier and faster to do the job on the raw float arrays. I can also hand optimize operations this way. This is especially useful for writing your own CUDA kernels. Here, I am using ARM NEON intrinsics, but you can use whatever you like.
 
 ## saxpy
 
