@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "saxpy and matvec, ARM SIMD Intrinsics, and OpenMP multithreading"
+title:  "saxpy and matvec, ARM SIMD Intrinsics, and OpenMP multithreading"
 date:   2024-05-20 03:13:00 -0700
 ---
 
 Extending python with C libraries is very useful. Say there's something I want to do with torch tensors that Pytorch does not support; it can be much easier and faster to do the job on the raw float arrays. I can also hand optimize operations this way. This is especially useful for writing your own CUDA kernels.
 
 ## saxpy
+
 
 ```python
 import torch
@@ -24,10 +25,17 @@ s
 
     392 µs ± 920 ns per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 
+
+
+
+
     tensor([0.9778, 0.2121, 0.6137,  ..., 1.3553, 1.3155, 1.4675])
+
+
 
 ## saxpy made 4x faster with SIMD intrinsics  
 [arm_neon.h](https://opensource.apple.com/source/gcc/gcc-5659/gcc/config/arm/arm_neon.h.auto.html)
+
 
 ```python
 %%writefile ./my_lib1.c
@@ -45,9 +53,14 @@ void saxpy4(float* s, float a, const float* x, const float* y, int n) {
 }
 ```
 
+    Overwriting ./my_lib1.c
+
+
+
 ```python
 !gcc-13 -O3 -shared -o my_lib1.so -fPIC my_lib1.c
 ```
+
 
 ```python
 import ctypes
@@ -62,7 +75,13 @@ s
 
     106 µs ± 129 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 
+
+
+
+
     tensor([0.9778, 0.2121, 0.6137,  ..., 1.3553, 1.3155, 1.4675])
+
+
 
 Its 4 times as fast because the SIMD vectors are 128 bits wide which is 4 fp32s.
 
@@ -97,9 +116,14 @@ void saxpy2x4(float* s, float a, const float* x, const float* y, int n) {
 }
 ```
 
+    Overwriting ./my_lib2.c
+
+
+
 ```python
 !gcc-13 -O3 -shared -o my_lib2.so -fPIC -fopenmp my_lib2.c
 ```
+
 
 ```python
 lib2 = ctypes.CDLL('./my_lib2.so')
@@ -113,11 +137,18 @@ s
 
     67.2 µs ± 267 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 
+
+
+
+
     tensor([0.9778, 0.2121, 0.6137,  ..., 1.3553, 1.3155, 1.4675])
+
+
 
 Its even faster!
 
 ## matrix vector product
+
 
 ```python
 W = torch.rand(4,4)
@@ -131,11 +162,16 @@ h
 
     980 ns ± 14.4 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 
+
+
+
+
     tensor([0.9658, 0.7360, 1.3095, 1.7704])
 
 
 
 ## matvec made faster with SIMD intrinsics
+
 
 ```python
 %%writefile ./my_lib3.c
@@ -155,6 +191,10 @@ void matvec4x4(float* h, const float* W, const float* x) {
 }
 ```
 
+    Writing ./my_lib3.c
+
+
+
 ```python
 !gcc-13 -O3 -shared -o my_lib3.so -fPIC -fopenmp my_lib3.c
 ```
@@ -172,6 +212,12 @@ h
 
     675 ns ± 10.7 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 
+
+
+
+
     tensor([0.9658, 0.7360, 1.3095, 1.7704])
+
+
 
 SIMD extensions are great if your linear operators are very small
