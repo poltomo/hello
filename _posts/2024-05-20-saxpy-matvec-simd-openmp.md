@@ -34,7 +34,7 @@ s
 
 
 ## saxpy made 4x faster with SIMD intrinsics  
-[arm_neon.h](https://opensource.apple.com/source/gcc/gcc-5659/gcc/config/arm/arm_neon.h.auto.html)
+You can get addresses the first element of torch tensors with the data_ptr() member. These are 64 bit unsigned integers on 64 bit systems. With these addresses and the tensors' lengths, you can really do whatever you want. Its a good idea not to do any memory allocation here. Do things in place and place any results of your computation into a passed tensor. Below, I place the results of a * x + y into the passed s tensor. Make sure not to ge tthe data type wrong. In this case, I know that I am working with the FP32 type.
 
 
 ```python
