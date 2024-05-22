@@ -34,7 +34,7 @@ s
 
 
 ## saxpy made 4x faster with SIMD intrinsics  
-You can get addresses the first element of torch tensors with the data_ptr() member. These are 64 bit unsigned integers on 64 bit systems. With these addresses and the tensors' lengths, you can really do whatever you want. Its a good idea not to do any memory allocation here. Do things in place and place any results of your computation into a passed tensor. Below, I place the results of a * x + y into the passed s tensor. Make sure not to ge tthe data type wrong. In this case, I know that I am working with the FP32 type.
+You can get addresses the first element of torch tensors with the data_ptr() member. These are 64 bit unsigned integers on 64 bit systems. With these addresses and the tensors' lengths, you can do whatever you want with the tensor. Be careful not to leak memory here. Do things in place or place the results of your computation into a passed tensor. Below, I place the results of a * x + y into the passed s tensor. Also, make sure not to get the data type wrong. In this case, I know that I am working with the FP32 type.
 
 
 ```python
@@ -53,7 +53,7 @@ void saxpy4(float* s, float a, const float* x, const float* y, int n) {
 }
 ```
 
-    Overwriting ./my_lib1.c
+    Writing ./my_lib1.c
 
 
 
@@ -116,7 +116,7 @@ void saxpy2x4(float* s, float a, const float* x, const float* y, int n) {
 }
 ```
 
-    Overwriting ./my_lib2.c
+    Writing ./my_lib2.c
 
 
 
