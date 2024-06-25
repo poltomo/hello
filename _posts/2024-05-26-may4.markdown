@@ -1,25 +1,24 @@
 ---
 layout: post
-title:  "compression, quantization, clustering, PCA"
+title:  "quantization, clustering, PCA, and compression"
 date:   2024-06-25 03:13:00 -0700
 ---
 
-it turns out that the poet E.E. Cummings did not use capital letters all that much. I've never read anything by him or any poetry at all, but I think this is a great idea, and I will try to adopt this habit where I can get away with it. I'm not giving up uppercase "I" though.
+it turns out that the poet E.E. Cummings did not use capital letters all that much. I've never read anything by him or any poetry at all, but I think this is a great idea, and I will try to adopt this habit where I can get away with it. I'm not giving up uppercase "I" though.  
 
-last month, I wrapped up a project about neural network compression. my method achieved about 6:1 compression, with the possibility of roughly ~10:1 compression if I followed it with a lossless encoder. Sadly, the model's accuracy dropped by 2 to 3 percent. I will fix this some other time.
+last month, I wrapped up a project about neural network compression. my method achieved about 6:1 compression, with the possibility of roughly ~10:1 compression if I followed it with a lossless encoder. Sadly, the model's accuracy dropped by 2 to 3 percent. I will fix this some other time.  
 
-In doing the project, I noted that clustering and quantization are the same thing. all floating point types are a discretization of the real valued, continuous number line. consider, f(x) =  k*floor(x / k). If you plot this fuction for different values of k, and you will see that it is a staircase function. applying floating point quantization is simply replacing x with f(x), where the size of the step corresponds to how aggressive the quantization is. The steps themselves are basically clusters. You can view f as clustering numbers in {R} to the {multiples of k}.
+In doing the project, I noted that clustering and quantization are the same thing. all floating point types are a discretization of the real valued, continuous number line. consider, f(x) =  k*floor(x / k). If you plot this fuction for different values of k, and you will see that it is a staircase function. applying floating point quantization is simply replacing x with f(x), where the size of the step corresponds to how aggressive the quantization is. The steps themselves are basically clusters. You can view f as clustering numbers in {R} to the {multiples of k}.  
 
 But, did you know that clustering is generalized by PCA? PCA is a dimensionality reduction technique. First, it takes data and finds a basis that spans that data, i.e. it finds a minimal set of vectors such that the data is a linear combination of minimal set of vectors. This basis is not just any basis, it comes from an important matrix factorization. Put this detail aside for now. Say you have m data points that are n dimensional, you can arrange this data as an mxn matrix A. Often, m > n, so picture a rectangle. This matrix's rank is at most min(m, n) = n. If you are lucky, the rank might be less than n. In that case, some features don't provide any new information, i.e. some features are linearly dependent. Often, you are not this lucky, but surely there are features that provide less information than others. The convenient basis provided by this matrix factorization is orthogonal, and some of these orthogonal basis vectors do not explain the variance in the data as well as others, so we can throw away those basis vectors and keep the top k orthogonal basis vectors. This is similar to how the discrete cosine transform is used in jpeg compression. The DCT decorrelates image patches into 2d cosine waves and throws away the high frequency bases as they often have little bearing on the image. Not that there are other orthogonal block transforms than the DCT.  
 
 What does this have to do with clustering? Clustering is a sparse PCA, in that it each data point (vector) is a linear combination of a set of basis vectors, except the coefficients in the sum are 0, except for one basis, e.g. x = 0*b_1 + ... 1*b_i + ... + 0*b_n, and so x belongs to the ith cluster.  
 
-Now, connect some of the dots: low rank and linear dependence, low energy, low variance, low entropy. They are all connected: linear algebra, signal processing, statistics, information theory.
+Now, connect some of the dots: low rank and linear dependence, low energy, low variance, low entropy. They are all connected: linear algebra, signal processing, statistics, information theory.  
 
-It is well known that compression is connected to model learning and prediction, but I want to highlight how much deeper the connection really is. In time, I will also detail some work I did at the end of May.
-I will get to this in my next post about learning models, autoencoders, and recommendation algorithms. But, that will have to wait for later. I am interning at Amazon in Santa Cruz this summer, so I have to sleep early.  
+It is well known that compression is connected to model learning and prediction, but I want to highlight how much deeper the connection really is. In time, I will also detail some work I did at the end of May. I will get to this in my next post about learning models, autoencoders, and recommendation algorithms. But, that will have to wait for later. I am interning at Amazon in Santa Cruz this summer, so I have to sleep early.  
 
-Also, the matrix factorization described earlier is singular value decomposition.
+Also, the matrix factorization described earlier is singular value decomposition.  
 
-11:15 pm on Monday, June 24, 2024
+11:15 pm on Monday, June 24, 2024  
 Varun Nawathey
