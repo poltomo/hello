@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "quantization, clustering, PCA, and compression"
-date:   2024-06-25 03:13:00 -0700
+title:  "quantization, clustering, PCA"
+date:   2024-06-24 03:13:00 -0700
 ---
 
 it turns out that the poet E.E. Cummings did not use capital letters all that much. I've never read anything by him or any poetry at all, but I think this is a great idea, and I will try to adopt this habit where I can get away with it. I'm not giving up uppercase "I" though.  
@@ -14,11 +14,11 @@ But, did you know that clustering is generalized by PCA? PCA is a dimensionality
 
 What does this have to do with clustering? Clustering is a sparse PCA, in that it each data point (vector) is a linear combination of a set of basis vectors, except the coefficients in the sum are 0, except for one basis, e.g. x = 0*b_1 + ... 1*b_i + ... + 0*b_n, and so x belongs to the ith cluster.  
 
-Now, connect some of the dots: low rank and linear dependence, low energy, low variance, low entropy. They are all connected: linear algebra, signal processing, statistics, information theory.  
-
-It is well known that compression is connected to model learning and prediction, but I want to highlight how much deeper the connection really is. In time, I will also detail some work I did at the end of May. I will get to this in my next post about learning models, autoencoders, and recommendation algorithms. But, that will have to wait for later. I am interning at Amazon in Santa Cruz this summer, so I have to sleep early.  
+Now, connect some of the dots: low rank and linear dependence, low energy, low variance, low entropy -> linear algebra, signal processing, statistics, information theory.  
 
 Also, the matrix factorization described earlier is singular value decomposition.  
+
+In the next post, I will connect this all to machine learning, models, compression, and recommendation algorithms. That will have to wait for tomorrow since I have to go to the office early tomorrow: I am in Santa Cruz for Amazon this summer.
 
 11:15 pm on Monday, June 24, 2024  
 Varun Nawathey
