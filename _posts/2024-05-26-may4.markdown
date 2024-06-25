@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "compression, quantization, clustering, PCA"
-date:   2024-06-24 03:13:00 -0700
+date:   2024-06-25 03:13:00 -0700
 ---
 
 it turns out that the poet E.E. Cummings did not use capital letters all that much. I've never read anything by him or any poetry at all, but I think this is a great idea, and I will try to adopt this habit where I can get away with it. I'm not giving up uppercase "I" though.
