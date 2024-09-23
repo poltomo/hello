@@ -5,10 +5,6 @@ date:   2023-10-07 15:06:34 -0700
 # categories:
 # permalink:
 ---
-This is the first post of October 2023.
----
-
-[wikipedia](https://en.wikipedia.org/wiki/Eight_queens_puzzle)
 
 [cses problem](https://cses.fi/problemset/task/1624/)
 
@@ -16,91 +12,9 @@ solution:
 
 Since no queens can share a row, there will be one queen per row and one queen per column in a solution. This makes for 8! queen arrangements.
 
-The intuition behind backtracking here is that when you place a queen, say in the first column of the first row, you threaten squares in following rows. So, in a trial and error fashion, you can successively place queens row by row until there is no unthreatened square to place the next queen. By that point if you have placed all your queens (the last queen you placed was on the last row), then you found a solution. If you still have queens yet to be placed, then you undo queen places, or backtrack, to a point where you can try a new arrangement.
+The intuition behind backtracking here is that when you place a queen, say in the first column of the first row, you threaten squares in following rows. So, in a trial and error fashion, you can successively place queens row by row until there is no unthreatened square to place the next queen. By that point if you have placed all your queens (the last queen you placed was on the last row), then you found a solution. If you still have queens yet to be placed, then you undo queen places, to a point where you can try a new arrangement.
 
-
-
-solution 1:
-```c++
-#include<iostream>
-#include<array>
-
-using namespace std;
-
-#define REP(i,N) for (int i = 0;i < N;++i)
-#define ll long long
-
-const int N = 8;
-
-void backtrack(int row, long long& cnt, array< array<int, N>, N>& A, const array<string, N>& board) {
-	if (row == N) {
-		++cnt;
-		return;
-	}
-
-	REP(col, N) {
-		if (board[row][col] == '.' && A[row][col] == 0) {
-
-			for (int i = row + 1;i < N;++i) ++A[i][col];
-
-			int h = col + 1;
-			int v = row + 1;
-
-			for (;h < N && v < N;++h,++v) ++A[v][h];
-
-			h = col - 1;
-			v = row + 1;
-
-			for (;h >= 0 && v < N;--h,++v) ++A[v][h];
-
-
-			backtrack(row + 1, cnt, A, board);
-
-
-			for (int i = row + 1;i < N;++i) --A[i][col];
-
-			h = col + 1;
-			v = row + 1;
-
-			for (;h < N && v < N;++h,++v) --A[v][h];
-
-			h = col - 1;
-			v = row + 1;
-
-			for (;h >= 0 && v < N;--h,++v) --A[v][h];
-		}
-	}
-}
-
-
-
-
-int main() {
-	array<string, N> board;
-
-	REP(i, N) {
-		cin >> board[i];
-	}
-
-	array< array<int, N>, N> A;
-
-	REP(i, N) {
-		REP(j, N) {
-			A[i][j] = 0;
-		}
-	}
-
-	stack<pair<int, int> > s;
-
-	ll cnt = 0;
-
-	backtrack(0, cnt, A, board);
-
-	cout << cnt << endl;
-}
-```
-
-You can also do this iteratively using a stack to perform the depth first search.
+Here is my depth first search solution. I explicitly use a stack instead of recursion
 
 solution 2:
 ```c++
@@ -196,11 +110,6 @@ int main() {
 }
 
 ```
-
-
-I think this problem is pretty neat. It came up in my data structures course and my professor had a lot to say about it. 
-
-[backtracking](https://en.wikipedia.org/wiki/Backtracking#Further_reading)
 
 solution 3:
 [usaco guide](https://usaco.guide/bronze/complete-rec?lang=cpp#backtracking)

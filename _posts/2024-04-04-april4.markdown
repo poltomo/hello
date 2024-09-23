@@ -8,8 +8,7 @@ date:   2024-04-07 03:13:00 -0700
 [distinguished lecture](https://ics.uci.edu/event/fast-and-simple-sorting-using-partial-information/)  
 
 Last Friday, there was a lecture by Robert Tarjan about sorting given some information
-about the sorted order. I thought it was pretty cool. I saw a lot of UCI's computer science
-professors there.
+about the sorted order.
 
 I forgot some things that were mentioned, and there's things that I remember being brought up briefly
 but also forget where they fit into the lecture. Here's those things:  

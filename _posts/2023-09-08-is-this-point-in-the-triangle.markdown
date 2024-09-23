@@ -26,9 +26,7 @@ bool inside_triangle(int rx, int ry, int ax, int ay, int bx, int by, int cx, int
 
 Why does this work?
 
-I'm going to explain how I made this later because I am hungry at the moment. If you
-cannot wait, my solution has to do with this: [barycentric_points](a).
-
+my solution has to do with this: [barycentric_points](a).
 
 Email me at nawatheyvarun (at) gmail (dot) com if you have questions.
 

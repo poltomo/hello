@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  "ubuntu container"
+title:  "container setup"
 date:   2024-01-26 07:30:00 -0700
 ---
 
-Building anything that is more than a couple of files of code on my mac has been really annoying and tedious.
-I have a compact pc for these cases, but I do not have a monitor for it. Now I just use a docker container.
-
+quick docker container setup guide
 
 I created this docker compose file in a folder:\
 ~/myfolder/docker-compose.yml
