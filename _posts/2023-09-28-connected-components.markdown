@@ -6,8 +6,6 @@ date:   2023-09-28 15:06:34 -0700
 # permalink:
 ---
 
-NOT FINISHED
-
 [wikipedia](https://en.wikipedia.org/wiki/Component_(graph_theory))
 ---
 
