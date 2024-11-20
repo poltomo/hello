@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "November 20, 2024"
+date:   2024-11-20 03:13:00 -0700
+---
+
+# November 20 Update
+
+I am working on an important project but its taking me some time.  
+
+I will still put out some cses solutions. There's also this years' facebook hacker cup questions.
+
+My main priorities are:
+1. complete my project  
+2. glean an enormous amount of knowledge. I've come across a lot of good readings and books
+[favorite number theory blog](https://exploringnumbertheory.wordpress.com), advanced computer architecture: a qualitative approach, information retrieval book, information theory and inference McKay, Mathematics for Machine Learning, [favorite GPU programmer](https://leimao.github.io), nervana systems guides and papers, colfax research whitepapers, ...
+
+3. reach expert level in codeforces before 2024 is over (post solutions on the way)  
+
+I will make sure to keep posting things, like problem solutions among other things.
+
+Miscellaneous posts to expect:  
+Finding all Wholefoods, Amazon Fresh, and Waitrose locations in London  
+London to Edinburgh on foot  
