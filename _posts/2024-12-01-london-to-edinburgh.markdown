@@ -8,12 +8,10 @@ date:   2024-12-02 15:06:34 -0700
 
 I have been in London since September. I'll be taking courses in ICL until around June. Afterwards, I will head back home and resume my work at Amazon.  
 
-ICL has a really nice computer lab and library. I have a pretty big reading list of books and online sources, so I'm in one or the other most days.  
-
-These are just some off the top of my head:  
+I have a pretty big reading list at the moment. These are just some off the top of my head:  
 [lei mao's log book](https://leimao.github.io), computer architecture: a quantitative approach, Information Theory, Inference and Learning Algorithms, [hbfs](https://hbfs.wordpress.com), [ryg blog](https://fgiesen.wordpress.com), [numerical linear algebra](https://www.stat.uchicago.edu/~lekheng/courses/309/books/Trefethen-Bau.pdf)  
 
-There's a lot more, I think they are in one of my notebooks somewhere.  
+There's a lot more books and web pages; they are in one of my notebooks somewhere.  
 
 Yesterday, I bought this [digital video camera](https://www.amazon.co.uk/Camcorder-Digital-Vlogging-Recorder-Rotatable/dp/B08927L6C4/). I was really pleased with the purchase. I ordered it the night before, and it arrived the next morning. I will get an sd card for it and then upload some videos to this youtube channel:
 
