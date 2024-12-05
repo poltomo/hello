@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  "december 4 list"
-date:   2024-01-29 07:30:00 -0700
+date:   2024-12-04 07:30:00 -0700
 ---
 
 December 4, 2024  
-This is a list so that I do not forget. I will continually add to it.
+This is a list of little things I sometimes forget
 
-#handling conda environments
-```
+# handling conda environments
+```bash
 # list environments
 conda env list
 
