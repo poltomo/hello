@@ -5,7 +5,7 @@ date:   2024-12-04 07:30:00 -0700
 ---
 
 December 4, 2024  
-This is a list of little things I sometimes forget
+These are some conda things that I forgot and will now never forget.
 
 # handling conda environments
 ```bash
@@ -24,3 +24,5 @@ conda env export --no-builds > environment.yml
 #replicate environment from yml
 conda env create -f environment.yml
 ```
+
+Japanese New Religious Movements
